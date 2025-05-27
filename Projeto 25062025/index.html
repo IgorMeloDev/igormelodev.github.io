@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mudança de Vida - Projeto Transformação</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        .header {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://source.unsplash.com/random/1920x1080/?nature');
+            background-size: cover;
+            color: white;
+            text-align: center;
+            padding: 100px 20px;
+        }
+
+        .nav {
+            background: #333;
+            padding: 15px;
+            position: sticky;
+            top: 0;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s;
+        }
+
+        .nav a:hover {
+            color: #4CAF50;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        .section {
+            margin: 50px 0;
+            text-align: center;
+        }
+
+        .card {
+            background: #f9f9f9;
+            padding: 20px;
+            margin: 20px;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .cta-button {
+            background: #4CAF50;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+
+        .footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 50px;
+        }
+
+        @media (max-width: 768px) {
+            .nav {
+                text-align: center;
+            }
+            
+            .nav a {
+                display: block;
+                margin: 10px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#sobre">Sobre</a>
+        <a href="#acoes">Ações</a>
+        <a href="#contato">Contato</a>
+    </nav>
+
+    <header class="header" id="home">
+        <h1>Sua Jornada para uma Vida Melhor Começa Aqui</h1>
+        <p>Junte-se ao movimento de transformação pessoal e social</p>
+        <button class="cta-button" onclick="showCommitmentForm()">Quero Mudar</button>
+    </header>
+
+    <main class="container">
+        <section class="section" id="sobre">
+            <h2>Sobre o Projeto</h2>
+            <div class="card">
+                <p>Nosso objetivo é inspirar mudanças positivas através de pequenas ações diárias que transformam vidas e comunidades.</p>
+            </div>
+        </section>
+
+        <section class="section" id="acoes">
+            <h2>Como Participar</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>1. Conscientize-se</h3>
+                    <p>Reflita sobre áreas da sua vida que podem ser melhoradas</p>
+                </div>
+                <div class="card">
+                    <h3>2. Planeje</h3>
+                    <p>Crie um plano de ação com metas realistas</p>
+                </div>
+                <div class="card">
+                    <h3>3. Aja</h3>
+                    <p>Coloque seu plano em prática e inspire outros</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="contato">
+            <h2>Comprometa-se com a Mudança</h2>
+            <form id="commitmentForm" style="display: none;">
+                <input type="text" placeholder="Seu nome" required>
+                <input type="email" placeholder="Seu e-mail" required>
+                <textarea placeholder="Seu compromisso..." required></textarea>
+                <button type="submit" class="cta-button">Enviar Compromisso</button>
+            </form>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Projeto de Transformação Social - Faculdade [Seu Nome]</p>
+        <p>© 2024 Todos os direitos reservados</p>
+    </footer>
+
+    <script>
+        function showCommitmentForm() {
+            document.getElementById('commitmentForm').style.display = 'block';
+            window.location.href = '#contato';
+        }
+
+        // Animação suave ao rolar
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Animação ao scroll
+        window.addEventListener('scroll', function() {
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if(cardTop < window.innerHeight) {
+                    card.style.opacity = '1';
+                    card.style.transform = 'translateY(0)';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
