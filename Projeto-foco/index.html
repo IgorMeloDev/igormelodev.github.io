@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-firestore.js"></script>
+
+<head>
+     <script src="firebase-config.js" type="module"></script>
+  
+
+</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FOCO - Preparatório para TAF</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Adicione antes do container principal -->
+<div id="auth-section">
+  <div v-if="!user">
+    <input type="email" id="email" placeholder="Email">
+    <input type="password" id="password" placeholder="Senha">
+    <button onclick="login()">Entrar</button>
+    <button onclick="signup()">Cadastrar</button>
+  </div>
+  <div v-else>
+    <p>Bem-vindo, <span id="user-email"></span>!</p>
+    <button onclick="logout()">Sair</button>
+  </div>
+</div>
+    <div class="container">
+        <h1>FOCO - Preparatório para TAF</h1>
+        
+        <div class="selecionar-dias">
+            <button class="btn-dias btn-4dias active" data-dias="4">4 Dias</button>
+            <button class="btn-dias btn-5dias" data-dias="5">5 Dias</button>
+            <button class="btn-dias btn-6dias" data-dias="6">6 Dias</button>
+        </div>
+
+        <!-- Plano 4 Dias -->
+        <div id="plano-4" class="plano-treino active">
+            <div class="card-plano">
+                <h2><i class="fas fa-dumbbell"></i> Plano Básico - 4 Dias</h2>
+                <div class="destaque-taf">Foco: Resistência em Barra</div>
+                
+                <div class="grade-dias">
+                    <!-- Dia 1 -->
+                    <div class="card-dia">
+                        <h3>Dia 1 - Força Pura</h3>
+                        <ul>
+                            <li>Barra com peso adicional 4x6</li>
+                            <li>Remada curvada 4x8</li>
+                            <li>Rosca direta 3x10</li>
+                        </ul>
+                    </div>
+
+                    <!-- Dia 2 -->
+                    <div class="card-dia">
+                        <h3>Dia 2 - Técnica</h3>
+                        <ul>
+                            <li>Barra assistida 4x8</li>
+                            <li>Negativas 3x5</li>
+                            <li>Prancha 3x1min</li>
+                        </ul>
+                    </div>
+
+                    <!-- Dia 3 -->
+                    <div class="card-dia">
+                        <h3>Dia 3 - Resistência</h3>
+                        <ul>
+                            <li>Barra livre 5x máx reps</li>
+                            <li>Pegada dinâmica 4x10</li>
+                        </ul>
+                    </div>
+
+                    <!-- Dia 4 -->
+                    <div class="card-dia">
+                        <h3>Dia 4 - Isometria</h3>
+                        <ul>
+                            <li>Isometria na barra 4x30s</li>
+                            <li>Prancha lateral 3x40s</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Planos 5 e 6 dias (adicionar conteúdo similar) -->
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
