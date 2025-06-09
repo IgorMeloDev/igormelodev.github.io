@@ -1,0 +1,102 @@
+/* Custom styles */
+body {
+    font-family: 'Roboto Slab', serif;
+    background-color: #FDF6E3; /* Cor de pergaminho */
+    color: #4A3F35; /* Marrom escuro */
+    scroll-behavior: smooth;
+}
+
+/* Use min-height to prevent content from being cut off */
+section {
+    min-height: 100vh;
+    padding: 5rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+/* Stanza container */
+.estrofe {
+    position: relative;
+    padding-left: 2.5rem; /* Space for the number */
+}
+
+/* Stanza number style */
+.numero-estrofe {
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #9F8A70; /* A lighter brown for the number */
+}
+
+/* Fade-in animation on scroll */
+.animate-on-scroll {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.animate-on-scroll.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* SVG filter to simulate xilogravura (woodcut) style */
+.xilogravura-filter {
+    filter: url(#turb);
+}
+
+/* Animated scroll-down icon */
+.scroll-down-icon {
+    animation: bounce 2s infinite;
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+/* IMPROVED ANIMATIONS FOR THE COVER PAGE */
+.titulo-maquina-escrever {
+    overflow: hidden;
+    white-space: nowrap;
+    width: 0;
+    border-right: .15em solid #4A3F35; /* The typwriter cursor */
+    animation: typing 2s steps(40, end) forwards;
+}
+
+#titulo-2 {
+    animation-delay: 1.5s;
+}
+
+@keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+}
+
+#capa-svg path {
+    opacity: 0;
+    animation: draw-in 1s ease-out forwards;
+}
+
+#capa-svg path:nth-child(1) { animation-delay: 2.5s; }
+#capa-svg path:nth-child(2) { animation-delay: 2.7s; }
+#capa-svg path:nth-child(3) { animation-delay: 2.9s; }
+
+
+@keyframes draw-in {
+    to {
+        opacity: 1;
+    }
+}

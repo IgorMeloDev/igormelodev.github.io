@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cordel Animado: O Representante Comercial</title>
+    
+    <!-- Link para o ficheiro de estilos CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Tailwind CSS for styling -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts for typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Link para o ficheiro JavaScript (com 'defer' para carregar no final) -->
+    <script src="script.js" defer></script>
+</head>
+<body class="overflow-x-hidden">
+
+    <!-- SVG filter definition (not visible) -->
+    <svg class="absolute w-0 h-0">
+        <filter id="turb">
+            <feTurbulence baseFrequency="0.02" numOctaves="3" result="turb" type="fractalNoise"></feTurbulence>
+            <feDisplacementMap in="SourceGraphic" in2="turb" scale="3" xChannelSelector="R" yChannelSelector="G"></feDisplacementMap>
+        </filter>
+    </svg>
+
+    <!-- Section 1: Cover Page -->
+    <section id="capa" class="text-center">
+        <div class="animate-on-scroll">
+            <div class="mb-8">
+                <h1 class="titulo-maquina-escrever text-4xl md:text-6xl lg:text-7xl font-bold mb-2 mx-auto">O Representante</h1>
+                <h2 id="titulo-2" class="titulo-maquina-escrever text-4xl md:text-6xl lg:text-7xl font-bold mx-auto">Comercial</h2>
+            </div>
+            
+            <svg id="capa-svg" class="w-48 h-48 mx-auto mb-6 xilogravura-filter" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                <path d="M50 55C45 55 40 60 40 65V95h20V65C60 60 55 55 50 55z M75 40c0 8.28-6.72 15-15 15H40c-8.28 0-15-6.72-15-15s6.72-15 15-15h20c8.28 0 15 6.72 15 15z M50 5C36.19 5 25 16.19 25 30h50C75 16.19 63.81 5 50 5z"/>
+                <path d="M20 70V95H5V70c0-5.52 4.48-10 10-10h0c2.76 0 5 2.24 5 5z"/>
+                <path d="M80 70V95h15V70c0-5.52-4.48-10 10-10h0c-2.76 0-5 2.24-5 5z"/>
+            </svg>
+            <p class="text-xl md:text-2xl">de Escrivão Joaquim Furtado</p>
+            <p class="text-lg md:text-xl mt-2">(Uma adaptação animada)</p>
+        </div>
+        <div class="absolute bottom-10 left-0 right-0 animate-on-scroll" style="transition-delay: 500ms;">
+            <p class="mb-2">Role para ler a história</p>
+            <svg class="w-8 h-8 mx-auto scroll-down-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path></svg>
+        </div>
+    </section>
+
+    <!-- Section 2: O Embaixador do Progresso (Estrofes 1-2) -->
+    <section class="bg-[#F8EFE0]">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="text-left animate-on-scroll">
+                <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed mb-6"><span class="numero-estrofe">1.</span>
+                    Desde os primórdios dos tempos,<br>
+                    Segundo antigos relatos,<br>
+                    O comércio dos produtos<br>
+                    Acontecia, de fato,<br>
+                    Por gente habilidosa<br>
+                    Simpática, de boa prosa,<br>
+                    Boa visão e bom trato.
+                </p>
+                <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed"><span class="numero-estrofe">2.</span>
+                    O vendedor é o retrato<br>
+                    De um perfeito embaixador,<br>
+                    Com sua diplomacia<br>
+                    Ao tratar com o comprador.<br>
+                    Leva e traz informações,<br>
+                    É Correio nos sertões...<br>
+                    Do progresso é condutor.
+                </p>
+            </div>
+            <div class="flex justify-center items-center animate-on-scroll" style="transition-delay: 200ms;">
+                 <svg class="w-64 h-64 xilogravura-filter" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M50 10 L80 25 L80 50 L50 65 L20 50 L20 25 Z M50 10 L50 65 M20 25 L50 40 L80 25 M20 50 L50 65 L80 50 M15 75 L85 75 L80 90 L20 90 Z"/></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 3: A Tradição Histórica (Estrofes 3-5) -->
+    <section>
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+             <div class="flex justify-center items-center animate-on-scroll md:order-2">
+                <svg class="w-64 h-64 xilogravura-filter" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M85 85 L15 85 Q 10 50 15 15 L 25 15 Q 20 50 25 85 L 85 85 Z M30 85 L30 25 L35 25 L35 85 Z M45 15 L55 15 L50 5 Z M60 20 L70 20 L65 30 L60 20 Z M75 40 C 70 50 75 55 80 50 C 85 45 80 40 75 40 Z M5 95 L 95 95 L 95 90 L 5 90 Z M 5 80 L 95 80 L 95 75 L 5 75 Z"/></svg>
+            </div>
+            <div class="text-right md:text-left md:order-1 animate-on-scroll" style="transition-delay: 200ms;">
+                <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed mb-6"><span class="numero-estrofe">3.</span>
+                    "Na verdade, o vendedor<br>
+                    Já nasce com essa arte"<br>
+                    É o que sempre se dizia,<br>
+                    E eu mesmo li num encarte.<br>
+                    Na Índia, a casta Vaishya,<br>
+                    Entre as demais, abrangia<br>
+                    Os vendedores à parte.
+                </p>
+                <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed mb-6"><span class="numero-estrofe">4.</span>
+                    Quem exercita a leitura<br>
+                    E dá valor à memória<br>
+                    Lembra que a Antiga Fenícia,<br>
+                    Segundo relata a História.<br>
+                    Só praticando negócios<br>
+                    Fez dos momentos de ócio<br>
+                    Muitas riquezas e glória.
+                </p>
+                <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed"><span class="numero-estrofe">5.</span>
+                    Os fenícios de outrora,<br>
+                    Após sofrerem revezes,<br>
+                    Cederam o lugar na história<br>
+                    Aos atuais libaneses;<br>
+                    São estes, atualmente,<br>
+                    Negociantes de frente,<br>
+                    Sabem adular os fregueses.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 4: A Herança Cultural (Estrofes 6-8) -->
+    <section class="bg-[#F8EFE0]">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="text-left animate-on-scroll">
+                 <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed mb-6"><span class="numero-estrofe">6.</span>
+                    Na Idade Média, os burgueses<br>
+                    Compravam das Caravanas<br>
+                    De Mercadores que andavam<br>
+                    Por horas, dias, semanas,<br>
+                    Meses, anos... sem destino,<br>
+                    Vendendo produtos finos,<br>
+                    Feito famílias ciganas.
+                </p>
+                 <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed mb-6"><span class="numero-estrofe">7.</span>
+                    Os árabes deram à Europa<br>
+                    A prática comercial,<br>
+                    Ao ocuparem a Espanha<br>
+                    E o Sul de Portugal.<br>
+                    E o nosso irmão português<br>
+                    Legou-nos, por sua vez,<br>
+                    Na época colonial.
+                </p>
+                 <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed"><span class="numero-estrofe">8.</span>
+                    Foram diversas etapas<br>
+                    Também aqui no Brasil,<br>
+                    Para o desenvolvimento<br>
+                    Do negócio mercantil:<br>
+                    As entradas no Sertão,<br>
+                    Os mascates, o regatão...<br>
+                    Muito mais coisa se viu.
+                </p>
+            </div>
+            <div class="flex justify-center items-center animate-on-scroll" style="transition-delay: 200ms;">
+                <svg class="w-64 h-64 xilogravura-filter" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M10 80 H90 M15 70 H85 M20 60 H80 M10 80 L20 60 M90 80 L80 60 M30 60 V40 L40 30 L50 40 V60 M60 60 V45 L70 35 L75 45 V60"/></svg>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 5: Personagens do Imaginário (Estrofes 9-11) -->
+    <section>
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+             <div class="flex justify-center items-center animate-on-scroll md:order-2">
+                <svg class="w-64 h-64 xilogravura-filter" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M45 95V70h-5V50h-5V35c0-5.52-4.48-10-10-10H10V15h15c8.28 0 15 6.72 15 15v5h5v20h5v20h5v20h-5z"/><path d="M55 95V70h5V50h5V35c0-5.52 4.48-10 10-10H90V15H75c-8.28 0-15 6.72-15-15v-5h-5v20h-5v20h-5v20h5z"/><circle cx="50" cy="15" r="10"/></svg>
+            </div>
+            <div class="text-right md:text-left md:order-1 animate-on-scroll" style="transition-delay: 200ms;">
+                <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed mb-6"><span class="numero-estrofe">9.</span>
+                    Quem não lembra Seu Xixi<br>
+                    Lá da Vila dos Confins<br>
+                    Do escritor Mário Palmério<br>
+                    Que por estradas ruins,<br>
+                    Caminhos, veredas, grotas,<br>
+                    Fazia a pé suas rotas,<br>
+                    Cruzando sertões sem fim?!.
+                </p>
+                <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed mb-6"><span class="numero-estrofe">10.</span>
+                    Quem esqueceu Seu Quequé,<br>
+                    Do seriado da Globo,<br>
+                    O caixeiro-viajante<br>
+                    Que nada tinha de bobo;<br>
+                    Família em cada cidade,<br>
+                    Três esposas com saudade,<br>
+                    Três ovelhas... um só lobo.
+                </p>
+                 <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed"><span class="numero-estrofe">11.</span>
+                    Nos tempos de hoje em dia<br>
+                    Já não se faz como outrora,<br>
+                    Não existem mais mascates,<br>
+                    Rodando o Brasil afora,<br>
+                    E os caixeiros-viajantes<br>
+                    São nossos REPRESENTANTES<br>
+                    COMERCIAIS de agora.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 6: O Representante Moderno (Estrofes 12-14) -->
+    <section class="bg-[#F8EFE0]">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="text-left animate-on-scroll">
+                 <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed mb-6"><span class="numero-estrofe">12.</span>
+                    Quem é que na sua infância<br>
+                    Não conheceu, bem de perto,<br>
+                    Um desses REPRESENTANTES<br>
+                    COMERCIAIS, sempre esperto,<br>
+                    Com sua grossa maleta<br>
+                    Quase sempre na cor preta<br>
+                    E um sorriso aberto...
+                </p>
+                <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed mb-6"><span class="numero-estrofe">13.</span>
+                    Chegavam nos consultórios<br>
+                    De médicos e dentistas,<br>
+                    Nas lojas comerciais;<br>
+                    Mostravam suas revistas,<br>
+                    Panfletos, folders, encartes...<br>
+                    Verdadeiras obras-d'arte,<br>
+                    Dessas de encher a vista.
+                </p>
+                 <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed"><span class="numero-estrofe">14.</span>
+                    Iniciavam a conquista<br>
+                    Do freguês, sempre indeciso,<br>
+                    Deixando amostras grátis,<br>
+                    Davam brindes, se preciso,<br>
+                    Falavam com tanto jeito<br>
+                    Que, ao despedir-se, o sujeito<br>
+                    Tinha nos lábios um sorriso.
+                </p>
+            </div>
+            <div class="flex justify-center items-center animate-on-scroll" style="transition-delay: 200ms;">
+                <svg class="w-64 h-64 xilogravura-filter" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><rect x="20" y="40" width="60" height="40" rx="5"></rect><path d="M40 40 V20 A10 10 0 0 1 60 20 V40"></path><circle cx="50" cy="50" r="4"/><circle cx="50" cy="65" r="4"/></svg>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 7: O Ofício e a Rotina (Estrofes 15-17) -->
+    <section>
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+             <div class="flex justify-center items-center animate-on-scroll md:order-2">
+                <svg class="w-64 h-64 xilogravura-filter" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M5 80 l40-60 l40 60 h-20 l-20-30 l-20 30 z"></path>
+                    <path d="M10 90 h80"></path>
+                </svg>
+            </div>
+            <div class="text-right md:text-left md:order-1 animate-on-scroll" style="transition-delay: 200ms;">
+                <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed mb-6"><span class="numero-estrofe">15.</span>
+                    Hoje, o representante<br>
+                    Comercial cumpre cota,<br>
+                    Tem destinos definidos,<br>
+                    Não pode mudar a rota,<br>
+                    Mas pode aumentar as vendas.<br>
+                    E todas as encomendas,<br>
+                    Com muito zelo, ele anota.
+                </p>
+                 <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed mb-6"><span class="numero-estrofe">16.</span>
+                    Só falta ser poliglota<br>
+                    E alguns até o são...<br>
+                    Dependendo da empresa,<br>
+                    Do cliente ou região;<br>
+                    Fala espanhol, fala inglês,<br>
+                    Até, conforme o freguês,<br>
+                    Fala o idioma alemão.
+                </p>
+                 <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed"><span class="numero-estrofe">17.</span>
+                    Pra fazer bem a lição,<br>
+                    Conforme determinado,<br>
+                    Muitos usam carro próprio;<br>
+                    Outros, carro alugado,<br>
+                    Ônibus, motocicleta...<br>
+                    Já não se tem o atleta<br>
+                    Que andava a pé no passado.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section 8: A Ética do Negócio (Estrofes 18-20) -->
+    <section class="bg-[#F8EFE0]">
+        <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+            <div class="text-left animate-on-scroll">
+                <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed mb-6"><span class="numero-estrofe">18.</span>
+                    Pra colocar no mercado<br>
+                    A sua mercadoria,<br>
+                    Com tanto produto igual<br>
+                    E marcas de fantasia,<br>
+                    Tem que ser competitivo,<br>
+                    Pois se não for bem ativo<br>
+                    Perde venda a cada dia.
+                </p>
+                <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed mb-6"><span class="numero-strofe">19.</span>
+                    Tem que ter sabedoria,<br>
+                    Sempre respeitar a ética,<br>
+                    Pra conseguir superar<br>
+                    Os demais na dialética.<br>
+                    Enfrentar a concorrência<br>
+                    Não basta ter eloqüência<br>
+                    Nem saber aritmética.
+                </p>
+                 <p class="estrofe text-lg md:text-xl lg:text-2xl leading-relaxed"><span class="numero-estrofe">20.</span>
+                    Não carece boa estética,<br>
+                    Basta discreta elegância;<br>
+                    Não tem que ser desleal,<br>
+                    Nem vencer pela ganância.<br>
+                    E mesmo que um cliente<br>
+                    Seja um tanto prepotente<br>
+                    Não devolva ignorância.
+                </p>
+            </div>
+            <div class="flex justify-center items-center animate-on-scroll" style="transition-delay: 200ms;">
+                <svg class="w-64 h-64 xilogravura-filter" viewBox="0 0 100 100" fill="currentColor" xmlns="http://www.w3.org/2000/svg"><path d="M20 20 L50 50 L20 80 Z M80 20 L50 50 L80 80 Z M25 15 L75 15 L75 85 L25 85 Z" stroke="currentColor" fill="transparent" stroke-width="4"></path></svg>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Section 9: Arremate e Homenagem (Estrofes 21-23 e Acróstico) -->
+    <section>
+        <div class="container mx-auto text-center animate-on-scroll">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Arremate e Homenagem</h2>
+            <p class="estrofe max-w-3xl mx-auto text-lg md:text-xl leading-relaxed mb-6"><span class="numero-estrofe">21.</span>
+                É de suma importância<br>
+                A tarefa desses homens<br>
+                Os nossos representantes<br>
+                Comerciais. E seus nomes<br>
+                São lembrados, neste instante,<br>
+                Como bravos bandeirantes<br>
+                Que não há força que dome.
+            </p>
+             <p class="estrofe max-w-3xl mx-auto text-lg md:text-xl leading-relaxed mb-6"><span class="numero-estrofe">22.</span>
+                Às homenagens se some<br>
+                Estes versos que lhes faço.<br>
+                O País lhes deve muito,<br>
+                Eu só revelei uns traços...<br>
+                Ao descrever o perfil<br>
+                Desses heróis do Brasil<br>
+                A quem deixo meu abraço.
+            </p>
+             <p class="estrofe max-w-3xl mx-auto text-lg md:text-xl leading-relaxed mb-6"><span class="numero-estrofe">23.</span>
+                Aproveitando o espaço<br>
+                Que AMORIM concedeu,<br>
+                Agradeço a MARCOS SOUZA<br>
+                Porque a mim escolheu<br>
+                Pra trazer esta mensagem,<br>
+                De versos em homenagem,<br>
+                A cada colega seu.
+            </p>
+            <div class="max-w-3xl mx-auto mt-12 pt-8 border-t-2 border-dashed border-gray-400">
+                 <p class="text-lg md:text-xl lg:text-2xl leading-relaxed">
+                    <strong class="font-bold text-2xl">J</strong>á soma quarenta anos<br>
+                    <strong class="font-bold text-2xl">O</strong> batismo de vocês,<br>
+                    <strong class="font-bold text-2xl">A</strong>través de Lei de número<br>
+                    <strong class="font-bold text-2xl">Q</strong>uatro, oito, oito, seis.<br>
+                    <strong class="font-bold text-2xl">U</strong>m conjunto de preceitos<br>
+                    <strong class="font-bold text-2xl">I</strong>nstituiu-lhes direitos,<br>
+                    <strong class="font-bold text-2xl">M</strong>as, deveres também fez.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <footer class="w-full p-4 text-center bg-[#4A3F35] text-[#FDF6E3]">
+        <p>Adaptação e desenvolvimento por IgorMeloDev / CORE-PB.</p>
+        <p>Baseado na obra "O Representante Comercial" de Escrivão Joaquim Furtado (2005).</p>
+    </footer>
+
+</body>
+</html>
