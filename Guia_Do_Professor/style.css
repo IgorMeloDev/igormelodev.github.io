@@ -209,3 +209,54 @@ h1 {
     content: '📅 '; /* Você pode trocar por outro emoji se quiser */
     font-size: 0.8rem;
 }
+/* Estilo do botão sanfona */
+.accordion {
+  background-color: #f1f1f1;
+  color: #444;
+  cursor: pointer;
+  padding: 10px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 0.85rem;
+  font-weight: 600;
+  transition: 0.4s;
+  border-radius: 8px;
+  margin-bottom: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Quando passar o mouse ou estiver ativo */
+.active, .accordion:hover {
+  background-color: #e0e0e0;
+}
+
+/* Símbolo de + que vira - */
+.accordion:after {
+  content: '\002B'; /* Símbolo de mais (+) */
+  color: #777;
+  font-weight: bold;
+  float: right;
+  margin-left: 5px;
+}
+
+.active:after {
+  content: "\2212"; /* Símbolo de menos (-) */
+}
+
+/* O painel que fica escondido */
+.panel {
+  padding: 0 10px;
+  background-color: white;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  font-size: 0.85rem;
+  color: #666;
+  text-align: justify;
+  margin-bottom: 10px;
+  border-left: 3px solid #2b7de9; /* Detalhe azul na lateral */
+}
