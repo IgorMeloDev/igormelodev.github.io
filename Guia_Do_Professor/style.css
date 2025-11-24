@@ -209,6 +209,8 @@ h1 {
     content: '📅 '; /* Você pode trocar por outro emoji se quiser */
     font-size: 0.8rem;
 }
+/* --- CSS CORRIGIDO DO ACCORDION (OBJETIVO PEDAGÓGICO) --- */
+
 /* Estilo do botão sanfona */
 .accordion {
   background-color: #f1f1f1;
@@ -229,8 +231,9 @@ h1 {
   align-items: center;
 }
 
-/* Quando passar o mouse ou estiver ativo */
-.active, .accordion:hover {
+/* --- A CORREÇÃO ESTÁ AQUI --- */
+/* Antes estava só ".active", agora especificamos que é só para o accordion */
+.accordion.active, .accordion:hover {
   background-color: #e0e0e0;
 }
 
@@ -243,7 +246,9 @@ h1 {
   margin-left: 5px;
 }
 
-.active:after {
+/* --- E AQUI TAMBÉM --- */
+/* Antes estava só ".active:after" */
+.accordion.active:after {
   content: "\2212"; /* Símbolo de menos (-) */
 }
 
@@ -258,5 +263,5 @@ h1 {
   color: #666;
   text-align: justify;
   margin-bottom: 10px;
-  border-left: 3px solid #2b7de9; /* Detalhe azul na lateral */
+  border-left: 3px solid #2b7de9;
 }
