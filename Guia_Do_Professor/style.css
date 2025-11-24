@@ -1,0 +1,211 @@
+/* --- RESET BÁSICO --- */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* --- CONTÊINER PRINCIPAL --- */
+.app-container {
+    background-color: #fff;
+    width: 100%;
+    max-width: 1000px; /* Limite para PC */
+    min-height: 100vh;
+    margin: 0 auto;
+    box-shadow: 0 0 20px rgba(0,0,0,0.05);
+    position: relative;
+}
+
+/* --- CABEÇALHO --- */
+header {
+    background-color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.header-content {
+    padding: 20px;
+    background: linear-gradient(135deg, #2b7de9, #6da6f7);
+    color: white;
+    border-radius: 0 0 20px 20px;
+}
+
+.logo-area {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.logo-icon {
+    width: 40px;
+    height: 40px;
+    background-color: white;
+    border-radius: 8px;
+    opacity: 0.9;
+}
+
+h1 {
+    font-size: 1.2rem;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+/* --- MENU DE NAVEGAÇÃO (LINKS) --- */
+.nav-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 15px 0;
+}
+
+.tab {
+    background: none;
+    border: none;
+    font-size: 1.1rem;
+    color: #888;
+    font-weight: 600;
+    padding: 10px;
+    
+    /* Importante para links: remove sublinhado e permite padding */
+    text-decoration: none;
+    display: inline-block;
+    transition: all 0.2s;
+}
+
+.tab:hover { 
+    color: #2b7de9; 
+}
+
+/* Classe para mostrar qual aba está selecionada */
+.tab.active { 
+    color: #2b7de9; 
+    border-bottom: 3px solid #2b7de9;
+}
+
+/* --- JOGOS (GRID) --- */
+.games-grid {
+    display: grid;
+    padding: 20px;
+    gap: 20px;
+    /* Cria colunas automáticas: PC várias colunas, Celular 1 coluna */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.game-card {
+    background-color: white;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border: 1px solid #eee;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+    transition: transform 0.2s;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    border-color: #2b7de9;
+}
+
+.game-icon-placeholder {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color: rgba(0,0,0,0.6);
+    font-size: 1rem;
+    flex-shrink: 0;
+}
+
+.game-info { flex-grow: 1; }
+
+.btn-download {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 8px 16px;
+    background-color: #01875f;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+/* --- METODOLOGIA --- */
+.methodology-section {
+    padding: 40px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.text-box p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #555;
+    font-size: 1rem;
+    text-align: justify;
+}
+
+/* --- BOTÃO FLUTUANTE --- */
+.fab {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    width: 60px;
+    height: 60px;
+    background-color: #2b7de9;
+    border-radius: 50%;
+    border: none;
+    color: white;
+    font-size: 28px;
+    box-shadow: 0 4px 15px rgba(43, 125, 233, 0.4);
+    cursor: pointer;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+}
+.fab:hover { transform: scale(1.1); }
+
+/* --- RESPONSIVIDADE (CELULAR) --- */
+@media (max-width: 768px) {
+    .app-container { max-width: 100%; }
+    .header-content { border-radius: 0 0 15px 15px; }
+    .games-grid { grid-template-columns: 1fr; } /* 1 Coluna no celular */
+    .methodology-section { padding: 20px; }
+    .fab { width: 50px; height: 50px; bottom: 20px; right: 20px; font-size: 22px; }
+}
+.game-icon-img {
+    width: 70px;
+    height: 70px;
+    border-radius: 12px;
+    object-fit: cover; /* Garante que a imagem não estique */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+/* --- TAG DE IDADE (ESTILO PÍLULA) --- */
+.age-tag {
+    display: inline-block; /* Faz a tag ocupar só o espaço necessário */
+    background-color: #e9ecef; /* Cor de fundo cinza claro */
+    color: #495057; /* Cor do texto cinza escuro */
+    font-size: 0.75rem; /* Texto pequenininho */
+    font-weight: 600; /* Texto em negrito */
+    padding: 4px 10px; /* Espapçamento interno */
+    border-radius: 20px; /* Bordas bem redondas (formato pílula) */
+    margin-bottom: 12px; /* Espaço entre a tag e o botão verde */
+}
+
+/* Opcional: Adiciona um pequeno ícone de relógio/idade antes do texto */
+.age-tag::before {
+    content: '📅 '; /* Você pode trocar por outro emoji se quiser */
+    font-size: 0.8rem;
+}
