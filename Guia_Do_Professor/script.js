@@ -1,8 +1,9 @@
+// Alternar Alto Contraste
 function toggleContrast() {
     const app = document.querySelector('.app-container');
     const cards = document.querySelectorAll('.game-card');
-    const headers = document.querySelectorAll('h1, h2, h3');
-    const texts = document.querySelectorAll('p');
+    const headers = document.querySelectorAll('h1, h2, h3, .author-name');
+    const texts = document.querySelectorAll('p, .author-title');
     
     // Verifica se já está preto
     if (app.style.backgroundColor === 'rgb(0, 0, 0)' || app.style.backgroundColor === 'black') {
@@ -15,7 +16,7 @@ function toggleContrast() {
             card.style.borderColor = '#eee';
         });
 
-        headers.forEach(h => h.style.color = ''); // Volta ao css original
+        headers.forEach(h => h.style.color = '');
         texts.forEach(t => t.style.color = '');
         
     } else {
@@ -32,14 +33,14 @@ function toggleContrast() {
         texts.forEach(t => t.style.color = '#ddd');
     }
 }
-// Código para o Accordion (Objetivo Pedagógico)
-var acc = document.getElementsByClassName("accordion");
-var i;
 
-for (i = 0; i < acc.length; i++) {
+// Funcionalidade do Accordion (Objetivo Pedagógico)
+const acc = document.getElementsByClassName("accordion");
+
+for (let i = 0; i < acc.length; i++) {
   acc[i].addEventListener("click", function() {
     this.classList.toggle("active");
-    var panel = this.nextElementSibling;
+    const panel = this.nextElementSibling;
     if (panel.style.maxHeight) {
       panel.style.maxHeight = null;
     } else {
