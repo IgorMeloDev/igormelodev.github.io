@@ -10,8 +10,6 @@ Este projeto adota uma abordagem de licenciamento **Creative Commons BY-NC-SA 4.
 
 1.  **Conteúdo e Metodologia:** Todo o texto, a metodologia pedagógica e a curadoria de jogos são de autoria de **Gisela Farias de Figueiredo Melo** e estão licenciados sob a licença **Creative Commons BY-NC-SA 4.0** (Atribuição-NãoComercial-CompartilhaIgual). Você pode utilizar este material para fins educacionais, desde que cite a autoria.
 
-
-
 ---
 
 **Aviso Legal:** As marcas, logotipos e imagens dos jogos citados (ABC Autismo, GColibris, etc.) pertencem aos seus respectivos desenvolvedores e proprietários. Tais materiais são utilizados neste guia estritamente para fins de referência educacional e informativa.
