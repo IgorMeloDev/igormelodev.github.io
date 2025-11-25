@@ -1,6 +1,8 @@
-# Guia do Professor Inclusivo
+# Guia do Professor Inclusivo Markdown
 
 Produto educacional desenvolvido no âmbito da **Universidade Estadual da Paraíba (UEPB)**. O objetivo é auxiliar professores na escolha de jogos digitais acessíveis para alunos com Transtorno do Espectro Autista (TEA).
+A iniciativa nasce da prática docente no Atendimento Educacional Especializado (AEE) de uma escola pública de **João Pessoa–PB**.
+Está articulado à pesquisa "Potencial dos Jogos Digitais na Alfabetização de Alunos com TEA: Análise das Percepções Docente"
 
 ## 📄 Licenciamento
 
