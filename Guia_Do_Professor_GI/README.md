@@ -10,7 +10,7 @@ Este projeto adota uma abordagem de licenciamento **Creative Commons BY-NC-SA 4.
 
 1.  **Conteúdo e Metodologia:** Todo o texto, a metodologia pedagógica e a curadoria de jogos são de autoria de **Gisela Farias de Figueiredo Melo** e estão licenciados sob a licença **Creative Commons BY-NC-SA 4.0** (Atribuição-NãoComercial-CompartilhaIgual). Você pode utilizar este material para fins educacionais, desde que cite a autoria.
 
-2.  **Código Fonte:** A estrutura técnica (HTML, CSS e JavaScript) está disponível sob a licença **MIT**, permitindo que outros desenvolvedores utilizem o código como base para criar novos recursos educacionais.
+
 
 ---
 
