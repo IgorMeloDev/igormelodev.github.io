@@ -1,8 +1,11 @@
+/* =========================================
+   1. VARIÁVEIS E RESET GLOBAL
+   ========================================= */
 :root {
-    --primary: #003366;
-    --primary-light: #00509e;
-    --accent: #ffcc00;
-    --accent-secondary: #00a8cc;
+    --primary: #003366;          /* Azul Marinho Institucional */
+    --primary-light: #00509e;    /* Azul mais claro para hover */
+    --accent: #ffcc00;           /* Amarelo Institucional */
+    --accent-secondary: #00a8cc; /* Ciano para detalhes */
     --text-dark: #1a1a1a;
     --text-gray: #555;
     --bg-light: #f8f9fa;
@@ -25,7 +28,9 @@ h1, h2, h3, h4 { font-family: 'Montserrat', sans-serif; font-weight: 700; color:
 a { text-decoration: none; transition: var(--transition); }
 .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
 
-/* Navbar */
+/* =========================================
+   2. NAVBAR (MENU SUPERIOR)
+   ========================================= */
 .navbar {
     background: #fff;
     padding: 15px 0;
@@ -36,16 +41,74 @@ a { text-decoration: none; transition: var(--transition); }
     box-shadow: 0 2px 15px rgba(0,0,0,0.08);
 }
 .navbar .container { display: flex; justify-content: space-between; align-items: center; }
-.logo { font-size: 1.6rem; font-weight: 800; color: var(--primary); display: flex; align-items: center; gap: 10px; }
-.badge-nav { font-size: 0.75rem; background: var(--primary); color: #fff; padding: 4px 10px; border-radius: 4px; font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
 
+/* Grupo da Marca (Logo + Divisor + Texto) */
+.brand-group {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.nav-logo {
+    max-height: 50px;
+    width: auto;
+}
+.nav-divider {
+    width: 1px;
+    height: 35px;
+    background-color: #ddd; /* Linha vertical cinza */
+}
+.report-title {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.1;
+}
+.report-label {
+    font-size: 0.7rem;
+    color: var(--text-gray);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.report-year {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--primary);
+}
+
+/* Links do Menu */
 .nav-links { display: flex; gap: 30px; list-style: none; align-items: center; }
 .nav-links a { color: var(--text-dark); font-weight: 600; font-size: 0.95rem; }
 .nav-links a:hover { color: var(--primary-light); }
 .btn-nav { background: var(--primary-light); color: white !important; padding: 10px 25px; border-radius: 5px; }
 .btn-nav:hover { background: var(--primary); transform: translateY(-2px); }
 
-/* Hero */
+/* Ícone Mobile */
+.mobile-menu-icon { display: none; font-size: 1.5rem; color: var(--primary); cursor: pointer; }
+
+/* Menu Dropdown Mobile */
+.mobile-menu {
+    display: none;
+    background: white;
+    padding: 20px;
+    border-top: 1px solid #eee;
+    text-align: center;
+    position: fixed;
+    top: 80px; /* Ajuste conforme a altura da navbar */
+    width: 100%;
+    left: 0;
+    box-shadow: 0 10px 10px rgba(0,0,0,0.1);
+}
+.mobile-menu.active { display: block; }
+.mobile-menu a {
+    display: block;
+    padding: 15px;
+    color: var(--primary);
+    font-weight: 600;
+    border-bottom: 1px solid #f9f9f9;
+}
+
+/* =========================================
+   3. HERO SECTION (CAPA)
+   ========================================= */
 .hero-section {
     padding: 160px 0 100px;
     background: linear-gradient(135deg, #f0f4f8 0%, #d9e2ec 100%);
@@ -55,10 +118,12 @@ a { text-decoration: none; transition: var(--transition); }
 }
 .hero-content { display: flex; align-items: center; gap: 60px; }
 .hero-text { flex: 1; }
+
 .year-badge { background: var(--accent); color: var(--primary); padding: 5px 15px; border-radius: 20px; font-weight: 700; font-size: 0.85rem; text-transform: uppercase; margin-bottom: 20px; display: inline-block; }
 .hero-text h1 { font-size: 3.2rem; line-height: 1.1; margin-bottom: 20px; }
 .highlight { color: var(--primary-light); position: relative; }
 .highlight::after { content: ''; position: absolute; bottom: 5px; left: 0; width: 100%; height: 8px; background: rgba(255, 204, 0, 0.4); z-index: -1; }
+
 .buttons { margin-top: 30px; display: flex; gap: 15px; }
 .btn { padding: 14px 35px; border-radius: 6px; font-weight: 700; cursor: pointer; border: none; display: inline-block; font-size: 1rem; }
 .btn-primary { background: var(--primary); color: white; box-shadow: 0 5px 15px rgba(0, 51, 102, 0.3); }
@@ -66,24 +131,38 @@ a { text-decoration: none; transition: var(--transition); }
 .btn-outline { border: 2px solid var(--primary); color: var(--primary); background: transparent; }
 .btn-outline:hover { background: var(--primary); color: white; }
 
-/* 3D Cover */
-.hero-image { flex: 1; display: flex; justify-content: center; perspective: 1000px; }
-.report-cover-3d {
-    width: 300px; height: 420px;
-    background: linear-gradient(135deg, var(--primary) 0%, #001f3f 100%);
-    border-radius: 12px;
-    display: flex; align-items: center; justify-content: center;
-    color: white;
-    box-shadow: 25px 25px 50px rgba(0,0,0,0.15), -5px -5px 10px rgba(255,255,255,0.5);
-    transform: rotateY(-15deg) rotateX(5deg);
-    transition: transform 0.5s;
-    border: 1px solid rgba(255,255,255,0.1);
+/* Imagem da Capa (Logo Flutuante) - SEM CAIXA BRANCA */
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
 }
-.report-cover-3d:hover { transform: rotateY(0deg) rotateX(0deg) scale(1.02); }
-.cover-content { text-align: center; }
-.cover-content i { font-size: 3.5rem; margin-bottom: 20px; color: var(--accent); }
 
-/* Stats */
+.hero-logo-floating {
+    width: 100%;
+    max-width: 480px; /* Tamanho controlado */
+    height: auto;
+    /* Sombra aplicada diretamente no recorte da imagem */
+    filter: drop-shadow(0 20px 40px rgba(0, 51, 102, 0.25)); 
+    animation: floatLogo 6s ease-in-out infinite;
+    transition: all 0.5s ease;
+}
+
+.hero-logo-floating:hover {
+    filter: drop-shadow(0 30px 60px rgba(0, 51, 102, 0.4));
+    transform: scale(1.02) translateY(-5px);
+}
+
+@keyframes floatLogo {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-20px); }
+}
+
+/* =========================================
+   4. ESTATÍSTICAS (STATS)
+   ========================================= */
 .stats-section { padding: 100px 0; background: white; }
 .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 10px; }
 .section-subtitle { text-align: center; color: var(--text-gray); margin-bottom: 60px; }
@@ -96,7 +175,9 @@ a { text-decoration: none; transition: var(--transition); }
 .icon-box { width: 70px; height: 70px; background: #f0f4f8; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px; color: var(--primary); font-size: 1.8rem; }
 .stat-card h3 { font-size: 2.5rem; margin-bottom: 5px; color: var(--primary); font-weight: 800; }
 
-/* Timeline */
+/* =========================================
+   5. TIMELINE (LINHA DO TEMPO)
+   ========================================= */
 .timeline-section { padding: 80px 0; background: #f8f9fa; }
 .timeline { position: relative; max-width: 900px; margin: 0 auto; }
 .timeline::after { content: ''; position: absolute; width: 4px; background-color: var(--primary-light); top: 0; bottom: 0; left: 50%; margin-left: -2px; }
@@ -108,7 +189,9 @@ a { text-decoration: none; transition: var(--transition); }
 .timeline-item .content { padding: 25px 30px; background-color: white; border-radius: 8px; box-shadow: var(--shadow); }
 .timeline-item h3 { color: var(--primary); margin-bottom: 10px; font-size: 1.2rem; }
 
-/* Team Section */
+/* =========================================
+   6. EQUIPE (TEAM & GOVERNANÇA)
+   ========================================= */
 .team-section {
     padding: 100px 0;
     background: linear-gradient(160deg, var(--primary) 0%, #001f3f 100%);
@@ -117,19 +200,12 @@ a { text-decoration: none; transition: var(--transition); }
 .text-light { color: white !important; }
 
 .president-card {
-    display: flex;
-    align-items: center;
-    gap: 50px;
-    max-width: 950px;
-    margin: 0 auto 70px;
+    display: flex; align-items: center; gap: 50px; max-width: 950px; margin: 0 auto 70px;
     background: rgba(255, 255, 255, 0.18); 
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
     border: 2px solid rgba(255, 255, 255, 0.4);
     box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
-    border-radius: 15px;
-    padding: 50px;
-    transition: var(--transition);
+    border-radius: 15px; padding: 50px; transition: var(--transition);
 }
 .president-card:hover { background: rgba(255, 255, 255, 0.25); transform: translateY(-5px); }
 .president-img img { width: 180px; height: 180px; border-radius: 50%; object-fit: cover; border: 4px solid var(--accent); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
@@ -156,158 +232,152 @@ a { text-decoration: none; transition: var(--transition); }
 .sub-text { font-size: 0.8rem; color: #888; background: rgba(255,255,255,0.1); padding: 2px 8px; border-radius: 4px; }
 
 /* =========================================
-   SEÇÃO DE DOWNLOAD (CTA) - DESIGN PREMIUM
+   7. DOWNLOAD SECTION (CTA)
    ========================================= */
-
-.cta-section {
-    padding: 100px 0;
-    background-color: #fff; /* Garante espaçamento limpo acima e abaixo */
-}
-
+.cta-section { padding: 100px 0; background-color: #fff; }
 .cta-box {
     background: linear-gradient(135deg, var(--primary) 0%, #001f3f 100%);
-    padding: 80px 40px;
-    border-radius: 25px; /* Bordas mais arredondadas */
-    text-align: center;
-    color: white;
-    box-shadow: 0 20px 60px rgba(0, 51, 102, 0.25);
-    position: relative;
-    overflow: hidden; /* Importante para os efeitos de fundo não vazarem */
+    padding: 80px 40px; border-radius: 25px; text-align: center; color: white;
+    box-shadow: 0 20px 60px rgba(0, 51, 102, 0.25); position: relative; overflow: hidden;
     border: 1px solid rgba(255, 255, 255, 0.1);
 }
-
-/* Efeito decorativo de fundo 1 (Brilho Amarelo suave) */
 .cta-box::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -10%;
-    width: 400px;
-    height: 400px;
+    content: ''; position: absolute; top: -50%; left: -10%; width: 400px; height: 400px;
     background: radial-gradient(circle, rgba(255, 204, 0, 0.08) 0%, transparent 70%);
-    border-radius: 50%;
-    z-index: 0;
-    pointer-events: none;
+    border-radius: 50%; z-index: 0; pointer-events: none;
 }
-
-/* Efeito decorativo de fundo 2 (Brilho Ciano suave) */
 .cta-box::after {
-    content: '';
-    position: absolute;
-    bottom: -30%;
-    right: -5%;
-    width: 400px;
-    height: 400px;
+    content: ''; position: absolute; bottom: -30%; right: -5%; width: 400px; height: 400px;
     background: radial-gradient(circle, rgba(0, 168, 204, 0.1) 0%, transparent 70%);
-    border-radius: 50%;
-    z-index: 0;
-    pointer-events: none;
+    border-radius: 50%; z-index: 0; pointer-events: none;
 }
-
-/* Garante que o texto fique acima dos efeitos de fundo */
-.cta-box h2, 
-.cta-box p, 
-.cta-box .btn-white {
-    position: relative;
-    z-index: 1;
-}
-
-.cta-box h2 {
-    font-size: 2.8rem;
-    margin-bottom: 20px;
-    color: #fff;
-    font-weight: 800;
-    letter-spacing: -1px;
-    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
-}
-
-.cta-box p {
-    font-size: 1.25rem;
-    color: #e0e0e0;
-    margin-bottom: 45px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-    line-height: 1.8;
-}
-
-/* Botão Branco Estilo "Cápsula" */
+.cta-box h2, .cta-box p, .cta-box .btn-white { position: relative; z-index: 1; }
+.cta-box h2 { font-size: 2.8rem; margin-bottom: 20px; color: #fff; font-weight: 800; letter-spacing: -1px; text-shadow: 0 5px 15px rgba(0,0,0,0.3); }
+.cta-box p { font-size: 1.25rem; color: #e0e0e0; margin-bottom: 45px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.8; }
 .btn-white {
-    background-color: #ffffff;
-    color: var(--primary);
-    padding: 20px 50px; /* Botão maior e mais clicável */
-    font-size: 1.1rem;
-    font-weight: 700;
-    border-radius: 50px; /* Formato de cápsula */
-    display: inline-flex;
-    align-items: center;
-    gap: 12px;
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Animação "elástica" */
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    text-decoration: none;
+    background-color: #ffffff; color: var(--primary); padding: 20px 50px; font-size: 1.1rem;
+    font-weight: 700; border-radius: 50px; display: inline-flex; align-items: center; gap: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2); transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    text-transform: uppercase; letter-spacing: 0.5px; text-decoration: none;
+}
+.btn-white i { font-size: 1.4rem; color: var(--accent-secondary); transition: transform 0.3s ease; }
+.btn-white:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.3); background-color: #fff; color: var(--primary-light); }
+.btn-white:hover i { transform: translateY(3px); color: var(--accent); }
+
+/* =========================================
+   8. FOOTER (RODAPÉ DARK)
+   ========================================= */
+footer {
+    background-color: var(--primary); /* Fundo Azul Escuro */
+    color: white;
+    padding: 80px 0 30px;
+    position: relative;
+    border-top: 5px solid var(--accent); /* Detalhe amarelo */
 }
 
-.btn-white i {
-    font-size: 1.4rem;
-    color: var(--accent-secondary); /* Ícone em azul ciano */
+.footer-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+}
+
+/* Caixa branca para a Logo */
+.footer-logo-box {
+    background: white;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    display: inline-block;
     transition: transform 0.3s ease;
 }
+.footer-logo-box:hover { transform: translateY(-5px); }
+.footer-logo-box img { max-height: 100px; width: auto; display: block; }
 
-/* Hover do Botão */
-.btn-white:hover {
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 255, 255, 0.3); /* Glow branco */
-    background-color: #fff;
-    color: var(--primary-light);
-}
-
-.btn-white:hover i {
-    transform: translateY(3px); /* Pequeno movimento no ícone (seta descendo) */
+/* Textos e Títulos do Rodapé */
+.footer-info h3, .footer-social h3 {
     color: var(--accent);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+.footer-info p { color: rgba(255,255,255,0.8); margin-bottom: 8px; font-size: 0.95rem; }
+.footer-info i { color: var(--accent-secondary); margin-right: 8px; }
+
+/* Redes Sociais */
+.social-icons { display: flex; justify-content: center; gap: 15px; }
+.social-icons a {
+    width: 50px; height: 50px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    color: white; font-size: 1.3rem;
+    transition: all 0.3s ease;
+}
+.social-icons a:hover {
+    background: var(--accent); color: var(--primary);
+    transform: translateY(-3px); box-shadow: 0 5px 15px rgba(255, 204, 0, 0.4);
 }
 
-/* Ajustes Mobile para a nova seção */
-@media (max-width: 768px) {
-    .cta-box {
-        padding: 60px 25px;
-        border-radius: 15px;
-    }
-    .cta-box h2 {
-        font-size: 2rem;
-    }
-    .btn-white {
-        width: 100%; /* Botão ocupa toda a largura no celular */
-        justify-content: center;
-        padding: 18px 20px;
-    }
+/* Copyright */
+.footer-bottom {
+    margin-top: 60px;
+    padding-top: 20px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
 }
+.footer-bottom p { font-size: 0.8rem; color: rgba(255,255,255,0.5); }
 
-/* Footer */
-footer { background: #fff; padding: 60px 0 30px; border-top: 1px solid #eee; text-align: center; color: var(--text-gray); }
-.footer-left strong { color: var(--primary); font-size: 1.4rem; margin-bottom: 10px; display: block; }
-.socials { display: flex; gap: 15px; justify-content: center; margin: 20px 0; }
-.socials a { width: 45px; height: 45px; background: #f0f4f8; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: var(--primary); transition: var(--transition); font-size: 1.2rem; }
-.socials a:hover { background: var(--primary); color: white; }
 
-/* Animações */
+/* =========================================
+   9. ANIMAÇÕES GERAIS
+   ========================================= */
 .hidden { opacity: 0; transform: translateY(40px); transition: all 0.8s ease; }
 .show { opacity: 1; transform: translateY(0); }
 
-/* Responsividade e Mobile - DEIXE ISTO POR ÚLTIMO */
+/* =========================================
+   10. RESPONSIVIDADE (MOBILE)
+   ========================================= */
 @media (max-width: 768px) {
     .nav-links { display: none; }
+    .mobile-menu-icon { display: block; }
+    
     .hero-content { flex-direction: column; text-align: center; }
+    .hero-text h1 { font-size: 2.2rem; }
+    
+    .hero-logo-floating { max-width: 300px; margin-top: 30px; }
+
+    .president-card { flex-direction: column; text-align: center; padding: 30px; gap: 20px; }
+    .council-wrapper { grid-template-columns: 1fr; }
+    
+    .cta-box { padding: 60px 25px; border-radius: 15px; }
+    .cta-box h2 { font-size: 2rem; }
+    .btn-white { width: 100%; justify-content: center; padding: 18px 20px; }
+    
     .timeline::after { left: 31px; }
     .timeline-item { width: 100%; padding-left: 70px; padding-right: 25px; }
     .timeline-item::after { left: 21px; }
     .left, .right { left: 0; text-align: left; }
-    
-    /* Mobile para o Presidente */
-    .president-card { flex-direction: column; text-align: center; padding: 30px; gap: 20px; }
-    
-    /* Mobile para o Conselho */
-    .council-wrapper { grid-template-columns: 1fr; }
-    .list-members li { flex-direction: column; align-items: flex-start; gap: 5px; }
+}
+
+@media (min-width: 768px) {
+    /* Layout do Rodapé para Desktop */
+    .footer-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center; /* Alinha verticalmente */
+        text-align: left;
+    }
+    .footer-info {
+        flex: 1;
+        padding: 0 40px;
+        border-right: 1px solid rgba(255,255,255,0.1);
+        border-left: 1px solid rgba(255,255,255,0.1);
+    }
+    .footer-social { padding-left: 40px; }
+    .social-icons { justify-content: flex-start; }
+    .footer-info p, .footer-info h3 { text-align: left; }
 }
