@@ -25,11 +25,11 @@ document.addEventListener('DOMContentLoaded', () => {
             if (entry.isIntersecting) {
                 entry.target.classList.add('show');
                 
-                // Se for um cartão de estatística, inicia a contagem dos números
-                if (entry.target.classList.contains('stat-card')) {
-                    const counter = entry.target.querySelector('.counter');
-                    if (counter) runCounter(counter);
-                }
+                // Procura TODOS os números com a classe .counter dentro do elemento que apareceu
+                const counters = entry.target.querySelectorAll('.counter');
+                counters.forEach(counter => {
+                    runCounter(counter); // Roda a animação para cada um deles
+                });
                 
                 // Para de observar depois que já apareceu
                 observer.unobserve(entry.target);
